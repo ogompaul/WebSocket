@@ -28,17 +28,9 @@ public class WebSocketAppConfig {
 		 DriverManagerDataSource dataSource = new DriverManagerDataSource();		 
 		 dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		 dataSource.setUrl("jdbc:mysql://localhost:3306/DB_sample?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
-		 dataSource.setUsername("patrick");
-		 dataSource.setPassword("Umuamanu1");
+		 dataSource.setUsername("username");
+		 dataSource.setPassword("password");
 		 dataSource.setConnectionProperties(hibernateProperties());
-		 		
-		/*DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(environment.getRequiredProperty("spring.datasource.driverClassName"));
-        dataSource.setUrl(environment.getRequiredProperty("spring.datasource.url"));
-        dataSource.setUsername(environment.getRequiredProperty("spring.datasource.username"));
-        dataSource.setPassword(environment.getRequiredProperty("spring.datasource.password"));
-         dataSource.setConnectionProperties(hibernateProperties());*/
-		
         return (DataSource)dataSource;
 		
 		//return (DataSource) source;
@@ -74,14 +66,7 @@ public class WebSocketAppConfig {
 	      properties.put("spring.jpa.hibernate.ddl-auto", environment.getRequiredProperty("spring.jpa.hibernate.ddl-auto"));
 		  properties.put("spring.jpa.hibernate.use-new-id-generator-mappings", environment.getRequiredProperty("spring.jpa.hibernate.use-new-id-generator-mappings"));
 	      properties.put("spring.jpa.open-in-view", environment.getRequiredProperty("spring.jpa.open-in-view"));
-		/*
-		 * properties.put("spring.jpa.properties.hibernate.dialect",
-		 * "org.hibernate.dialect.MySQL5Dialect"); properties.put("hibernate.show_sql",
-		 * true); properties.put("spring.data.jpa.repositories.enabled", true);
-		 * properties.put("spring.jpa.hibernate.ddl-auto", "update");
-		 * properties.put("spring.jpa.hibernate.use-new-id-generator-mappings", true);
-		 * properties.put("spring.jpa.open-in-view", false);
-		 */
+		
 	        return properties;
 	}
 
